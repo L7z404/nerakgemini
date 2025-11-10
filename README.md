@@ -1,4 +1,4 @@
-# Nerakgemini
+# Nerak Gemini
 
 To start your Phoenix server:
 
