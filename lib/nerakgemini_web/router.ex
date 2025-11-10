@@ -17,7 +17,8 @@ defmodule NerakgeminiWeb.Router do
   scope "/", NerakgeminiWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", IndexController, :index
+    get "/default", PageController, :home
   end
 
   # Other scopes may use custom stacks.
