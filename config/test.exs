@@ -7,8 +7,8 @@ import Config
 # Run `mix help test` for more information.
 config :nerakgemini, Nerakgemini.Repo,
   username: "root",
-  password: "",
-  hostname: "localhost",
+  password: "password",
+  hostname: "db",
   database: "nerakgemini_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
