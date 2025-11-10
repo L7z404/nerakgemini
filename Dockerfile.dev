@@ -1,0 +1,16 @@
+FROM elixir:1.19.2-alpine
+
+RUN apk add --no-cache build-base mysql-client git inotify-tools
+
+WORKDIR /app
+
+COPY mix.exs mix.lock ./
+RUN mix local.hex --force && mix local.rebar --force
+RUN mix deps.get
+
+COPY . .
+
+EXPOSE 4000
+
+CMD ["mix", "phx.server"]
+
