@@ -6,6 +6,10 @@
 @source "../js";
 @source "../../lib/nerakgemini_web";
 
+/* Backpex Admin */
+@source "../../deps/backpex/**/*.*ex";
+@source "../../deps/backpex/assets/js/**/*.*js";
+
 /* A Tailwind plugin that makes "hero-#{ICON}" classes available.
    The heroicons installation itself is managed by your mix.exs */
 @plugin "../vendor/heroicons";
@@ -14,7 +18,7 @@
    curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui.js
    Make sure to look at the daisyUI changelog: https://daisyui.com/docs/changelog/ */
 @plugin "../vendor/daisyui" {
-  themes: false;
+  themes: all;
 }
 
 /* daisyUI theme plugin. You can update this file by fetching the latest version with:

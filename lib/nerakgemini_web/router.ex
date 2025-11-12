@@ -8,6 +8,7 @@ defmodule NerakgeminiWeb.Router do
     plug :put_root_layout, html: {NerakgeminiWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Backpex.ThemeSelectorPlug # Backpex Admin
   end
 
   pipeline :api do
@@ -17,9 +18,24 @@ defmodule NerakgeminiWeb.Router do
   scope "/", NerakgeminiWeb do
     pipe_through :browser
 
-    get "/", IndexController, :index
-    get "/default", PageController, :home
+    get "/", PageController, :home
+    # get "/default", IndexController, :index
   end
+
+  # Backpex Admin
+  import Backpex.Router
+  scope "/admin" do
+    pipe_through :browser
+
+    backpex_routes()
+
+    get "/", NerakgeminiWeb.RedirectController, :redirect_to_posts
+
+    live_session :default, on_mount: Backpex.InitAssigns do
+      live_resources "/posts", NerakgeminiWeb.Live.PostLive
+    end
+  end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", NerakgeminiWeb do

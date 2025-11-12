@@ -1,5 +1,5 @@
 defmodule Nerakgemini.Repo do
   use Ecto.Repo,
     otp_app: :nerakgemini,
-    adapter: Ecto.Adapters.MyXQL
+    adapter: Ecto.Adapters.Postgres
 end

@@ -151,4 +151,14 @@ defmodule NerakgeminiWeb.Layouts do
     </div>
     """
   end
+
+  @doc """
+  This is for the Backpex Admin
+  """
+  attr :flash, :map, required: true, doc: "the map of flash messages"
+  attr :fluid?, :boolean, default: true, doc: "if the content uses full width"
+  attr :current_url, :string, required: true, doc: "the current url"
+  slot :inner_block, required: true
+
+  def admin(assigns)
 end

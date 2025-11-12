@@ -1,17 +1,16 @@
 services:
   db:
-    image: mysql:8.0
+    image: postgres:17-alpine
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: nerakgemini_dev
-      MYSQL_USER: phoenix
-      MYSQL_PASSWORD: password
+      POSTGRES_USER: phoenix
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: nerakgemini_dev
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "pg_isready -U phoenix -d nerakgemini_dev"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -23,7 +22,7 @@ services:
       dockerfile: Dockerfile.dev
     command: mix phx.server
     environment:
-      DATABASE_URL: "mysql://phoenix:password@db/elixir_gemini_dev"
+      DATABASE_URL: "postgresql://phoenix:password@db/nerakgemini_dev"
       SECRET_KEY_BASE: "o7jES2y6QaTrDW7HjcqIFbwFzUtjMyA+8arm8VPj3CJqzZu5jnRHRji3kUlqUM9A"
     ports:
       - "4000:4000"
