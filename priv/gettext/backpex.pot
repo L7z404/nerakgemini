@@ -1,0 +1,192 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new messages manually only if they're dynamic
+## messages that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here has no
+## effect: edit them in PO (.po) files instead.
+
+msgid ""
+msgstr ""
+
+msgid "%{count} %{resources} have been deleted successfully."
+msgstr ""
+
+msgid "%{resource} has been deleted successfully."
+msgstr ""
+
+msgid "%{resource} has been edited successfully."
+msgstr ""
+
+msgid "(%{count} total)"
+msgstr ""
+
+msgid "Add entry"
+msgstr ""
+
+msgid "An error occurred while deleting %{count} %{resources}!"
+msgstr ""
+
+msgid "An error occurred while deleting the %{resource}!"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Are you sure you want to delete %{count} items?"
+msgstr ""
+
+msgid "Are you sure you want to delete the item?"
+msgstr ""
+
+msgid "Attach %{resource}"
+msgstr ""
+
+msgid "Attempting to reconnect..."
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Choose %{resource} ..."
+msgstr ""
+
+msgid "clear"
+msgstr ""
+
+msgid "Clear %{name} filter"
+msgstr ""
+
+msgid "Close modal"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Deselect all"
+msgstr ""
+
+msgid "Detach relation with index %{index}"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit %{resource}"
+msgstr ""
+
+msgid "Edit relation with index %{index}"
+msgstr ""
+
+msgid "Error in relation with index %{index}"
+msgstr ""
+
+msgid "Filters"
+msgstr ""
+
+msgid "From"
+msgstr ""
+
+msgid "Hang in there while we get back on track..."
+msgstr ""
+
+msgid "Items %{from} to %{to}"
+msgstr ""
+
+msgid "New %{resource}"
+msgstr ""
+
+msgid "New %{resource} has been created successfully."
+msgstr ""
+
+msgid "Next Page"
+msgstr ""
+
+msgid "No %{resources} found"
+msgstr ""
+
+msgid "No options found"
+msgstr ""
+
+msgid "or drag and drop"
+msgstr ""
+
+msgid "Previous Page"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save & Continue editing"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Select all items"
+msgstr ""
+
+msgid "Select item with id: %{id}"
+msgstr ""
+
+msgid "Select options..."
+msgstr ""
+
+msgid "selected"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Show more"
+msgstr ""
+
+msgid "Something went wrong!"
+msgstr ""
+
+msgid "The item is used elsewhere."
+msgstr ""
+
+msgid "The items are used elsewhere."
+msgstr ""
+
+msgid "There are errors in the form."
+msgstr ""
+
+msgid "To"
+msgstr ""
+
+msgid "Toggle columns"
+msgstr ""
+
+msgid "Toggle metrics"
+msgstr ""
+
+msgid "too large"
+msgstr ""
+
+msgid "too many files"
+msgstr ""
+
+msgid "Try a different filter setting or clear all filters."
+msgstr ""
+
+msgid "Try a different search term."
+msgstr ""
+
+msgid "unacceptable file type"
+msgstr ""
+
+msgid "Unselect %{label}"
+msgstr ""
+
+msgid "Upload a file"
+msgstr ""
+
+msgid "We can't find the internet!"
+msgstr ""

@@ -63,6 +63,11 @@ config :phoenix, :json_library, Jason
 # Set the PubSub server
 config :backpex, :pubsub_server, Nerakgemini.PubSub
 
+# Set Backpex translator_function
+config :backpex,
+  translator_function: {NerakgeminiWeb.CoreComponents, :translate_backpex},
+  error_translator_function: {NerakgeminiWeb.CoreComponents, :translate_error}
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
