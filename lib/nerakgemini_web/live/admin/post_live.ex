@@ -29,7 +29,16 @@ defmodule NerakgeminiWeb.Admin.PostLive do
         module: Backpex.Fields.BelongsTo,
         label: "Imagen",
         display_field: :name,
-        prompt: "Seleccionar imagen..."
+        prompt: "Seleccionar imagen...",
+        render: fn
+          %{value: value} = assigns when value == "" or is_nil(value) ->
+            ~H"<p><%= Backpex.HTML.pretty_value(@value) %></p>"
+
+          assigns ->
+            ~H"""
+            <img class="h-20 w-auto rounded shadow" src={file_url(@value.src)} alt="Imagen" />
+            """
+        end
       },
       body: %{
         module: Backpex.Fields.Textarea,
@@ -37,4 +46,12 @@ defmodule NerakgeminiWeb.Admin.PostLive do
       }
     ]
   end
+
+    defp file_url(file_name) do
+      static_path = Path.join([upload_dir(), file_name])
+      Phoenix.VerifiedRoutes.static_url(NerakgeminiWeb.Endpoint, "/" <> static_path)
+    end
+
+    defp upload_dir, do: Path.join(["uploads", "blog", "images"])
+
 end

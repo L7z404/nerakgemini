@@ -37,3 +37,6 @@ npm-debug.log
 
 # Ignore the priv/static/uploads/
 /priv/static/uploads/*
+
+# Ignore Elixir LS
+.elixir_ls/*
