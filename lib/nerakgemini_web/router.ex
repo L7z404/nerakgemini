@@ -1,6 +1,7 @@
 defmodule NerakgeminiWeb.Router do
   use NerakgeminiWeb, :router
 
+  # Pipelines
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -15,32 +16,34 @@ defmodule NerakgeminiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # Scopes
   scope "/", NerakgeminiWeb do
     pipe_through :browser
 
     get "/", PageController, :home
-    # get "/default", IndexController, :index
   end
 
   # Backpex Admin
   import Backpex.Router
-  scope "/admin" do
+  scope "/admin", NerakgeminiWeb.Admin do
     pipe_through :browser
 
     backpex_routes()
 
-    get "/", NerakgeminiWeb.RedirectController, :redirect_to_posts
+    get "/", RedirectController, :redirect_to_posts
 
     live_session :default, on_mount: Backpex.InitAssigns do
-      live_resources "/posts", NerakgeminiWeb.Live.PostLive
+      live_resources "/posts", PostLive
     end
   end
 
+  # JSON API v1
+  scope "/api/v1", NerakgeminiWeb.API.V1 do
+    pipe_through :api
 
-  # Other scopes may use custom stacks.
-  # scope "/api", NerakgeminiWeb do
-  #   pipe_through :api
-  # end
+    resources "/posts", PostController, only: [:index, :show]
+  end
+
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:nerakgemini, :dev_routes) do

@@ -1,4 +1,4 @@
-defmodule NerakgeminiWeb.RedirectController do
+defmodule NerakgeminiWeb.Admin.RedirectController do
   use NerakgeminiWeb, :controller
 
   def redirect_to_posts(conn, _params) do

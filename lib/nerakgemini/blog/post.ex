@@ -2,6 +2,7 @@ defmodule Nerakgemini.Blog.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, only: [:id, :title, :views, :inserted_at, :updated_at]}
   schema "blog_posts" do
     field :title, :string
     field :views, :integer

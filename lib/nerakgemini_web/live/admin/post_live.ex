@@ -1,4 +1,4 @@
-defmodule NerakgeminiWeb.Live.PostLive do
+defmodule NerakgeminiWeb.Admin.PostLive do
   use Backpex.LiveResource,
     adapter_config: [
       schema: Nerakgemini.Blog.Post,
