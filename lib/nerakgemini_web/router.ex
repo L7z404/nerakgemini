@@ -34,7 +34,9 @@ defmodule NerakgeminiWeb.Router do
 
     live_session :default, on_mount: Backpex.InitAssigns do
       live_resources "/posts", PostLive
+      live_resources "/images", ImageLive
     end
+
   end
 
   # JSON API v1
@@ -42,6 +44,7 @@ defmodule NerakgeminiWeb.Router do
     pipe_through :api
 
     resources "/posts", PostController, only: [:index, :show]
+    resources "/images", ImageController, only: [:index, :show]
   end
 
 

@@ -9,21 +9,21 @@ defmodule NerakgeminiWeb.Admin.PostLive do
     layout: {NerakgeminiWeb.Layouts, :admin}
 
   @impl Backpex.LiveResource
-  def singular_name, do: "Post"
+  def singular_name, do: "Publicación"
 
   @impl Backpex.LiveResource
-  def plural_name, do: "Posts"
+  def plural_name, do: "Publicaciones"
 
   @impl Backpex.LiveResource
   def fields do
     [
       title: %{
         module: Backpex.Fields.Text,
-        label: "Title"
+        label: "Título"
       },
       views: %{
         module: Backpex.Fields.Number,
-        label: "Views"
+        label: "Vistas"
       }
     ]
   end

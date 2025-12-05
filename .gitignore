@@ -35,3 +35,5 @@ nerakgemini-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore the priv/static/uploads/
+/priv/static/uploads/*
