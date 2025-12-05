@@ -1,0 +1,192 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%{count} %{resources} have been deleted successfully."
+msgstr "%{count} %{resources} han sido eliminados exitosamente."
+
+msgid "%{resource} has been deleted successfully."
+msgstr "%{resource} ha sido eliminado exitosamente."
+
+msgid "%{resource} has been edited successfully."
+msgstr "%{resource} ha sido editado exitosamente."
+
+msgid "(%{count} total)"
+msgstr "(%{count} total)"
+
+msgid "Add entry"
+msgstr "Agregar entrada"
+
+msgid "An error occurred while deleting %{count} %{resources}!"
+msgstr "¡Ocurrió un error al eliminar %{count} %{resources}!"
+
+msgid "An error occurred while deleting the %{resource}!"
+msgstr "¡Ocurrió un error al eliminar el %{resource}!"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Are you sure you want to delete %{count} items?"
+msgstr "¿Estás seguro de que quieres eliminar %{count} elementos?"
+
+msgid "Are you sure you want to delete the item?"
+msgstr "¿Estás seguro de que quieres eliminar el elemento?"
+
+msgid "Attach %{resource}"
+msgstr "Adjuntar %{resource}"
+
+msgid "Attempting to reconnect..."
+msgstr "Intentando reconectar..."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Choose %{resource} ..."
+msgstr "Elegir %{resource} ..."
+
+msgid "clear"
+msgstr "limpiar"
+
+msgid "Clear %{name} filter"
+msgstr "Limpiar filtro %{name}"
+
+msgid "Close modal"
+msgstr "Cerrar modal"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Deselect all"
+msgstr "Deseleccionar todo"
+
+msgid "Detach relation with index %{index}"
+msgstr "Desadjuntar relación con índice %{index}"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit %{resource}"
+msgstr "Editar %{resource}"
+
+msgid "Edit relation with index %{index}"
+msgstr "Editar relación con índice %{index}"
+
+msgid "Error in relation with index %{index}"
+msgstr "Error en relación con índice %{index}"
+
+msgid "Filters"
+msgstr "Filtros"
+
+msgid "From"
+msgstr "Desde"
+
+msgid "Hang in there while we get back on track..."
+msgstr "Espera mientras nos recuperamos..."
+
+msgid "Items %{from} to %{to}"
+msgstr "Elementos %{from} a %{to}"
+
+msgid "New %{resource}"
+msgstr "Nuevo %{resource}"
+
+msgid "New %{resource} has been created successfully."
+msgstr "Nuevo %{resource} ha sido creado exitosamente."
+
+msgid "Next Page"
+msgstr "Página siguiente"
+
+msgid "No %{resources} found"
+msgstr "No se encontraron %{resources}"
+
+msgid "No options found"
+msgstr "No se encontraron opciones"
+
+msgid "or drag and drop"
+msgstr "o arrastra y suelta"
+
+msgid "Previous Page"
+msgstr "Página anterior"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Save & Continue editing"
+msgstr "Guardar y continuar editando"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Select all"
+msgstr "Seleccionar todo"
+
+msgid "Select all items"
+msgstr "Seleccionar todos los elementos"
+
+msgid "Select item with id: %{id}"
+msgstr "Seleccionar elemento con id: %{id}"
+
+msgid "Select options..."
+msgstr "Seleccionar opciones..."
+
+msgid "selected"
+msgstr "seleccionado"
+
+msgid "Show"
+msgstr "Mostrar"
+
+msgid "Show more"
+msgstr "Mostrar más"
+
+msgid "Something went wrong!"
+msgstr "¡Algo salió mal!"
+
+msgid "The item is used elsewhere."
+msgstr "El elemento se usa en otro lugar."
+
+msgid "The items are used elsewhere."
+msgstr "Los elementos se usan en otro lugar."
+
+msgid "There are errors in the form."
+msgstr "Hay errores en el formulario."
+
+msgid "To"
+msgstr "Hasta"
+
+msgid "Toggle columns"
+msgstr "Alternar columnas"
+
+msgid "Toggle metrics"
+msgstr "Alternar métricas"
+
+msgid "too large"
+msgstr "demasiado grande"
+
+msgid "too many files"
+msgstr "demasiados archivos"
+
+msgid "Try a different filter setting or clear all filters."
+msgstr "Prueba una configuración de filtro diferente o limpia todos los filtros."
+
+msgid "Try a different search term."
+msgstr "Prueba un término de búsqueda diferente."
+
+msgid "unacceptable file type"
+msgstr "tipo de archivo no aceptable"
+
+msgid "Unselect %{label}"
+msgstr "Deseleccionar %{label}"
+
+msgid "Upload a file"
+msgstr "Subir un archivo"
+
+msgid "We can't find the internet!"
+msgstr "¡No podemos encontrar internet!"

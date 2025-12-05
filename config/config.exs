@@ -60,6 +60,9 @@ config :logger, :default_formatter,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Configure Gettext default locale
+config :nerakgemini, NerakgeminiWeb.Gettext, default_locale: "es_MX"
+
 # Set the PubSub server
 config :backpex, :pubsub_server, Nerakgemini.PubSub
 
