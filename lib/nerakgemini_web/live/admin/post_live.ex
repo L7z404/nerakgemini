@@ -21,9 +21,19 @@ defmodule NerakgeminiWeb.Admin.PostLive do
         module: Backpex.Fields.Text,
         label: "Título"
       },
-      views: %{
-        module: Backpex.Fields.Number,
-        label: "Vistas"
+      subtitle: %{
+        module: Backpex.Fields.Text,
+        label: "Subtítulo"
+      },
+      image: %{
+        module: Backpex.Fields.BelongsTo,
+        label: "Imagen",
+        display_field: :name,
+        prompt: "Seleccionar imagen..."
+      },
+      body: %{
+        module: Backpex.Fields.Textarea,
+        label: "Cuerpo"
       }
     ]
   end

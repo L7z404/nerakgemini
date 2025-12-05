@@ -21,5 +21,6 @@ defmodule NerakgeminiWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext.Backend, otp_app: :nerakgemini, default_locale: "es_MX"
+  # use Gettext.Backend, otp_app: :nerakgemini, default_locale: "es_MX"
+  use Gettext.Backend, otp_app: :nerakgemini
 end
