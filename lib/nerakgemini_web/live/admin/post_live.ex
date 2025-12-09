@@ -47,11 +47,11 @@ defmodule NerakgeminiWeb.Admin.PostLive do
     ]
   end
 
-    defp file_url(file_name) do
-      static_path = Path.join([upload_dir(), file_name])
-      Phoenix.VerifiedRoutes.static_url(NerakgeminiWeb.Endpoint, "/" <> static_path)
-    end
+  defp file_url(file_name) do
+    static_path = Path.join([upload_dir(), file_name])
+    Phoenix.VerifiedRoutes.static_url(NerakgeminiWeb.Endpoint, "/" <> static_path)
+  end
 
-    defp upload_dir, do: Path.join(["uploads", "blog", "images"])
+  defp upload_dir, do: Path.join(["uploads", "blog", "images"])
 
 end

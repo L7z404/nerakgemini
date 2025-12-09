@@ -1,6 +1,6 @@
 FROM elixir:1.19.2-alpine
 
-RUN apk add --no-cache build-base mysql-client git inotify-tools make
+RUN apk add --no-cache build-base mysql-client git inotify-tools make bash
 
 WORKDIR /app
 
