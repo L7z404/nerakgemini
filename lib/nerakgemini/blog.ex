@@ -14,7 +14,7 @@ defmodule Nerakgemini.Blog do
   Returns the list of posts.
   """
   def list_posts do
-    Repo.all(Post) |> Repo.preload(:image)
+    Repo.all(Post) |> Repo.preload [:image, :user]
   end
 
   @doc """
@@ -23,7 +23,7 @@ defmodule Nerakgemini.Blog do
   Raises `Ecto.NoResultsError` if the Post does not exist.
   """
   def get_post!(id) do
-    Repo.get!(Post, id) |> Repo.preload(:image)
+    Repo.get!(Post, id) |> Repo.preload [:image, :user]
   end
 
   @doc """
@@ -63,7 +63,7 @@ defmodule Nerakgemini.Blog do
   Returns the list of images.
   """
   def list_images do
-    Repo.all(Image)
+    Repo.all(Image) |> Repo.preload(:user)
   end
 
   @doc """
@@ -71,7 +71,9 @@ defmodule Nerakgemini.Blog do
 
   Raises `Ecto.NoResultsError` if the Image does not exist.
   """
-  def get_image!(id), do: Repo.get!(Image, id)
+  def get_image!(id) do
+    Repo.get!(Image, id) |> Repo.preload(:user)
+  end
 
   @doc """
   Creates a image.
