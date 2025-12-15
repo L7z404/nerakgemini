@@ -21,7 +21,7 @@ defmodule Nerakgemini.MixProject do
   def application do
     [
       mod: {Nerakgemini.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :os_mon]
     ]
   end
 
@@ -67,7 +67,8 @@ defmodule Nerakgemini.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
-      {:backpex, "~> 0.16.3"}
+      {:backpex, "~> 0.16.3"},
+      {:ecto_psql_extras, "~> 0.6"}
     ]
   end
 
