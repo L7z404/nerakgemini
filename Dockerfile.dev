@@ -1,16 +1,30 @@
+# Use Elixir 1.19.2 on Alpine Linux for a lightweight image
 FROM elixir:1.19.2-alpine
 
+# Install system dependencies needed for compilation and development
+# - build-base: C compiler and build tools for native extensions
+# - mysql-client: Database client tools
+# - git: Version control (needed for some Hex packages)
+# - inotify-tools: File watching for live reload
+# - make, bash: Build and shell utilities
 RUN apk add --no-cache build-base mysql-client git inotify-tools make bash
 
+# Set working directory for the application
 WORKDIR /app
 
-COPY mix.exs mix.lock ./
-RUN mix local.hex --force && mix local.rebar --force
-RUN mix deps.get
+# Copy and set up the entrypoint script
+# This script runs before CMD and handles dependency installation
+COPY entrypoint.sh /usr/local/bin
 
-COPY . .
+# Make the entrypoint script executable
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
+# Expose Phoenix default port
 EXPOSE 4000
 
+# Use entrypoint to install deps at runtime (after volumes are mounted)
+ENTRYPOINT [ "entrypoint.sh" ]
+
+# Start the Phoenix server
 CMD ["mix", "phx.server"]
 

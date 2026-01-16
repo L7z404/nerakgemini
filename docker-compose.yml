@@ -1,40 +1,69 @@
 services:
+  # PostgreSQL database service
   db:
+    # Use PostgreSQL 17 on Alpine Linux for a lightweight image
     image: postgres:17-alpine
+    
+    # Database configuration
     environment:
       POSTGRES_USER: phoenix
       POSTGRES_PASSWORD: password
       POSTGRES_DB: nerakgemini_dev
+    
+    # Expose PostgreSQL port to host machine
     ports:
       - "5432:5432"
+    
+    # Persist database data across container restarts
     volumes:
       - db_data:/var/lib/postgresql/data
+    
+    # Health check to ensure database is ready before starting web service
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U phoenix -d nerakgemini_dev"]
-      interval: 5s
-      timeout: 3s
-      retries: 10
-      start_period: 10s
+      interval: 5s      # Check every 5 seconds
+      timeout: 3s       # Fail if check takes longer than 3 seconds
+      retries: 10       # Try 10 times before marking as unhealthy
+      start_period: 10s # Grace period before starting health checks
 
+  # Phoenix web application service
   web:
+    # Build from local Dockerfile.dev
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: mix phx.server
+    
+    # Environment variables for the Phoenix application
     environment:
+      # Database connection string pointing to the 'db' service
       DATABASE_URL: "postgresql://phoenix:password@db/nerakgemini_dev"
+      # Secret key for signing/encrypting session data (change in production!)
       SECRET_KEY_BASE: "o7jES2y6QaTrDW7HjcqIFbwFzUtjMyA+8arm8VPj3CJqzZu5jnRHRji3kUlqUM9A"
+    
+    # Expose Phoenix port to host machine
     ports:
       - "4000:4000"
+    
+    # Wait for database to be healthy before starting
     depends_on:
       db:
         condition: service_healthy
+    
+    # Volume mounts
     volumes:
+      # Mount current directory to /app for live code reloading
       - .:/app
+      # Use named volume for deps to persist dependencies across rebuilds
+      # This prevents re-downloading deps every time the container restarts
       - deps:/app/deps
+      # Use named volume for build artifacts to speed up compilation
       - _build:/app/_build
 
+# Named volumes for persistent data
 volumes:
+  # PostgreSQL data
   db_data:
+  # Elixir dependencies (from mix deps.get)
   deps:
+  # Compiled Elixir/Erlang build artifacts
   _build:
