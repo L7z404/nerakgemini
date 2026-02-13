@@ -96,10 +96,10 @@ msgid "Items %{from} to %{to}"
 msgstr "Elementos %{from} a %{to}"
 
 msgid "New %{resource}"
-msgstr "Nuevo %{resource}"
+msgstr "Crear %{resource}"
 
 msgid "New %{resource} has been created successfully."
-msgstr "Nuevo %{resource} ha sido creado exitosamente."
+msgstr "%{resource} ha sido creado exitosamente."
 
 msgid "Next Page"
 msgstr "Página siguiente"

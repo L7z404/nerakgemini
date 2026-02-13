@@ -69,7 +69,6 @@ defmodule NerakgeminiWeb.Router do
   end
 
   ## Authentication routes
-
   scope "/", NerakgeminiWeb do
     pipe_through [:browser, :require_authenticated_user]
 

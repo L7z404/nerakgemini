@@ -10,6 +10,11 @@
       ]}
     />
 
+    <%!-- Show user (get from email) --%>
+    <p class="text-warning flex justify-between">
+      {String.split(@current_scope.user.email, "@") |> List.first()}
+    </p>
+
     <Backpex.HTML.Layout.topbar_dropdown class="mr-2 md:mr-0">
       <:label>
         <div class="btn btn-square btn-ghost">
@@ -17,13 +22,20 @@
         </div>
       </:label>
       <li>
-        <.link href="/" class="text-error flex justify-between hover:bg-base-200">
-          <p>Logout</p>
+        <.link href={~p"/users/settings"} class="text-info flex justify-between hover:bg-base-200">
+          <p><strong>Settings</strong></p>
+          <Backpex.HTML.CoreComponents.icon name="hero-cog-6-tooth" class="size-5" />
+        </.link>
+      </li>
+      <li>
+        <.link href={~p"/users/log-out"} method="delete" class="text-error flex justify-between hover:bg-base-200">
+          <p><strong>Logout</strong></p>
           <Backpex.HTML.CoreComponents.icon name="hero-arrow-right-on-rectangle" class="size-5" />
         </.link>
       </li>
     </Backpex.HTML.Layout.topbar_dropdown>
   </:topbar>
+
   <:sidebar>
     <!-- Sidebar Content -->
     <Backpex.HTML.Layout.sidebar_item current_url={@current_url} navigate={~p"/admin/posts"}>
@@ -33,6 +45,8 @@
       <.icon name="hero-book-open" class="size-5" /> Imagen
     </Backpex.HTML.Layout.sidebar_item>
   </:sidebar>
+
   <Backpex.HTML.Layout.flash_messages flash={@flash} />
   {render_slot(@inner_block)}
+
 </Backpex.HTML.Layout.app_shell>
