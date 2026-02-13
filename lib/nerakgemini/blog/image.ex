@@ -34,8 +34,6 @@ defmodule Nerakgemini.Blog.Image do
     user_id = metadata[:assigns][:current_scope].user.id
     attrs = Map.put(attrs, "user_id", user_id)
 
-    dbg(user_id)
-
     image
     |> changeset(attrs)
     |> validate_required([:user_id])
