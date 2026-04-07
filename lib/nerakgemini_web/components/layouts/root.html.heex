@@ -7,6 +7,12 @@
     <.live_title default="Nerakgemini" suffix=" · Phoenix Framework">
       {assigns[:page_title]}
     </.live_title>
+
+    <script>
+      const t = localStorage.getItem("backpexTheme") || "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    </script>
+
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
     </script>
