@@ -24,10 +24,34 @@ import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
 import {hooks as colocatedHooks} from "phoenix-colocated/nerakgemini"
 import topbar from "../vendor/topbar"
+
+/* A WYSIWYG editor plugin. You can update this file by fetching the latest version with:
+   https://www.jsdelivr.com/package/npm/trix
+   curl -sLo trix.js https://cdn.jsdelivr.net/npm/trix@X.X.X/dist/trix.umd.min.js */
+import "../vendor/trix";
+
 // Backpex Admin
 import {Hooks as BackpexHooks} from 'backpex';
 
-const Hooks = [] // My app hooks (optional)
+// const Hooks = [] // My app hooks (optional)
+const Hooks = {
+  Trix: {
+    mounted() {
+      const textarea = this.el.querySelector("textarea");
+      textarea.hidden = true;
+      textarea.id = textarea.id || `trix-textarea-${Date.now()}`;
+
+      const editor = document.createElement("trix-editor");
+      editor.setAttribute("input", textarea.id);
+      this.el.appendChild(editor);
+
+      this.el.addEventListener("trix-change", () => {
+        textarea.value = editor.innerHTML;
+        textarea.dispatchEvent(new Event("input", {bubbles: true} ))
+      });
+    }
+  }
+};
 
 const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 const liveSocket = new LiveSocket("/live", Socket, {

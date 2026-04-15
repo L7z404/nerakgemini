@@ -41,7 +41,7 @@ defmodule NerakgeminiWeb.Admin.PostLive do
         end
       },
       body: %{
-        module: Backpex.Fields.Textarea,
+        module: NerakgeminiWeb.Fields.TrixField,
         label: "Cuerpo"
       }
     ]
