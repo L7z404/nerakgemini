@@ -109,13 +109,4 @@ if (process.env.NODE_ENV === "development") {
   })
 }
 
-window.addEventListener("phx:update", () => {
-  const storedTheme = localStorage.getItem("backpexTheme");
-  if (storedTheme) {
-    document.documentElement.setAttribute("data-theme", storedTheme);
-    const radio = document.querySelector(
-      `#backpex-theme-selector-form input[value="${storedTheme}"]`
-    );
-    if (radio) radio.checked = true;
-  }
-});
+

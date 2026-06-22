@@ -9,31 +9,25 @@
     </.live_title>
 
     <script>
-      const t = localStorage.getItem("backpexTheme") || "dark";
-      document.documentElement.setAttribute("data-theme", t);
+      (() => {
+        const KEY = "phx:theme";
+        const setTheme = (theme) => {
+          if (theme === "system") {
+            localStorage.removeItem(KEY);
+            document.documentElement.removeAttribute("data-theme");
+          } else {
+            localStorage.setItem(KEY, theme);
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        };
+        setTheme(localStorage.getItem(KEY) || "system");
+        window.addEventListener("storage", (e) => e.key === KEY && setTheme(e.newValue || "system"));
+        window.addEventListener("phx:set-theme", (e) => setTheme(e.target.dataset.phxTheme));
+      })();
     </script>
 
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
-    </script>
-    <script>
-      (() => {
-        const setTheme = (theme) => {
-          if (theme === "system") {
-            localStorage.removeItem("phx:theme");
-            document.documentElement.removeAttribute("data-theme");
-          } else {
-            localStorage.setItem("phx:theme", theme);
-            document.documentElement.setAttribute("data-theme", theme);
-          }
-        };
-        if (!document.documentElement.hasAttribute("data-theme")) {
-          setTheme(localStorage.getItem("phx:theme") || "system");
-        }
-        window.addEventListener("storage", (e) => e.key === "phx:theme" && setTheme(e.newValue || "system"));
-        
-        window.addEventListener("phx:set-theme", (e) => setTheme(e.target.dataset.phxTheme));
-      })();
     </script>
   </head>
   <body>

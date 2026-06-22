@@ -2,45 +2,6 @@
   <:topbar>
     <Backpex.HTML.Layout.topbar_branding title="Nerak Gemini" />
 
-    <Backpex.HTML.Layout.theme_selector
-      socket={@socket}
-      themes={[
-        {"Light", "light"},
-        {"Dark", "dark"},
-        {"Cupcake", "cupcake"},
-        {"Bumblebee", "bumblebee"},
-        {"Emerald", "emerald"},
-        {"Corporate", "corporate"},
-        {"Synthwave", "synthwave"},
-        {"Retro", "retro"},
-        {"Cyberpunk", "cyberpunk"},
-        {"Valentine", "valentine"},
-        {"Halloween", "halloween"},
-        {"Garden", "garden"},
-        {"Forest", "forest"},
-        {"Aqua", "aqua"},
-        {"Lofi", "lofi"},
-        {"Pastel", "pastel"},
-        {"Fantasy", "fantasy"},
-        {"Wireframe", "wireframe"},
-        {"Black", "black"},
-        {"Luxury", "luxury"},
-        {"Dracula", "dracula"},
-        {"Cmyk", "cmyk"},
-        {"Autumn", "autumn"},
-        {"Business", "business"},
-        {"Acid", "acid"},
-        {"Lemonade", "lemonade"},
-        {"Night", "night"},
-        {"Coffee", "coffee"},
-        {"Winter", "winter"},
-        {"Dim", "dim"},
-        {"Nord", "nord"},
-        {"Sunset", "sunset"}
-      ]}
-
-    />
-
     <%!-- Show user (get from email) --%>
     <p class="text-warning flex justify-between">
       {String.split(@current_scope.user.email, "@") |> List.first()}
