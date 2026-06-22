@@ -1,5 +1,5 @@
 # Use Elixir 1.19.2 on Alpine Linux for a lightweight image
-FROM elixir:1.19.2-alpine
+FROM elixir:1.20.1-alpine
 
 # Install system dependencies needed for compilation and development
 # - build-base: C compiler and build tools for native extensions
