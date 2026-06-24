@@ -49,6 +49,33 @@ const Hooks = {
         textarea.value = editor.innerHTML;
         textarea.dispatchEvent(new Event("input", {bubbles: true} ))
       });
+
+      this.el.addEventListener("trix-attachment-add", (event) => {
+          const { attachment } = event;
+          if (!attachment.file) return; // skip SGIDs / non-file attachments
+
+          const formData = new FormData();
+          formData.append("file", attachment.file);
+
+          const csrf = document
+            .querySelector("meta[name='csrf-token']")
+            .getAttribute("content");
+
+          fetch("/admin/uploads/images", {
+            method: "POST",
+            headers: { "x-csrf-token": csrf },
+            body: formData,
+          })
+          .then((r) => r.json())
+          .then(({ url }) => {
+            attachment.setAttributes({ url, href: url });
+          })
+          .catch(() => {
+            attachment.remove();
+          });
+
+      });
+      
     }
   }
 };

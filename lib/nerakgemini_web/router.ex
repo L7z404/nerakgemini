@@ -31,6 +31,9 @@ defmodule NerakgeminiWeb.Router do
   scope "/admin", NerakgeminiWeb.Admin do
     pipe_through [:browser, :require_authenticated_user]
 
+    #Trix editor images
+    post "/uploads/images", UploadController, :create
+
     live_session :authenticated_admin,
       on_mount: [
         {NerakgeminiWeb.UserAuth, :require_authenticated},
