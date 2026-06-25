@@ -116,6 +116,12 @@
 /*  
   Trix editor fixes 
 */
+
+.trix-content .attachment--preview img {
+  display: block;
+  margin: 0 auto;
+}
+
 trix-editor h1 {
   font-size: 1.5em;
   font-weight: bold;
